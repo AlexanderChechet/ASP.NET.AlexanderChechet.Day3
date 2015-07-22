@@ -18,7 +18,7 @@ namespace PolynomTest
         [TestMethod]
         public void Polynom_EqualsOtherFirst()
         {
-            var array = new double?[] {1, 0, 2, 4, 5};
+            var array = new double[] {1, 0, 2, 4, 5};
             var first = new CustomPolynom(array);
             var second = new CustomPolynom(array);
 
@@ -28,7 +28,7 @@ namespace PolynomTest
         [TestMethod]
         public void Polynom_EqualsOtherSecond()
         {
-            var array = new double?[] { 1, 0, 2, 4, 5 };
+            var array = new double[] { 1, 0, 2, 4, 5 };
             var first = new CustomPolynom(array);
             var second = new CustomPolynom(array);
 
@@ -39,7 +39,7 @@ namespace PolynomTest
         [ExpectedException(typeof(NullReferenceException))]
         public void Polynom_EqualsOtherNullReference()
         {
-            var array = new double?[] { 1, 0, 2, 4, 5 };
+            var array = new double[] { 1, 0, 2, 4, 5 };
             var first = new CustomPolynom(array);
             CustomPolynom second = null;
 
@@ -49,7 +49,7 @@ namespace PolynomTest
         [TestMethod]
         public void Polynom_NotEqualsOther()
         {
-            var array = new double?[] { 1, 0, 2, 4, 5 };
+            var array = new double[] { 1, 0, 2, 4, 5 };
             var first = new CustomPolynom(array);
             var second = new CustomPolynom(array);
 
@@ -59,7 +59,7 @@ namespace PolynomTest
         [TestMethod]
         public void Polynom_Clone()
         {
-            var array = new double?[] { 1, 0, 2, 4, 5 };
+            var array = new double[] { 1, 0, 2, 4, 5 };
             var first = new CustomPolynom(array);
             var second = (CustomPolynom)first.Clone();
 
@@ -69,9 +69,9 @@ namespace PolynomTest
         [TestMethod]
         public void Polynom_Addition()
         {
-            var firstArray = new double?[] { 1, 0, 2, 4, 5 };
-            var secondArray = new double?[] { 3, 6, 1, 0, 10, -2 };
-            var resultArray = new double?[] { 4, 6, 3, 4, 15, -2 };
+            var firstArray = new double[] { 1, 0, 2, 4, 5 };
+            var secondArray = new double[] { 3, 6, 1, 0, 10, -2 };
+            var resultArray = new double[] { 4, 6, 3, 4, 15, -2 };
             var first = new CustomPolynom(firstArray);
             var second = new CustomPolynom(secondArray);
             var result = new CustomPolynom(resultArray);
@@ -84,9 +84,9 @@ namespace PolynomTest
         [TestMethod]
         public void Polynom_Subtraction()
         {
-            var firstArray = new double?[] { 1, 0, 2, 4, 5 };
-            var secondArray = new double?[] { 3, 6, 1, 0, 10, -2 };
-            var resultArray = new double?[] { -2, -6, 1, 4, -5, 2 };
+            var firstArray = new double[] { 1, 0, 2, 4, 5 };
+            var secondArray = new double[] { 3, 6, 1, 0, 10, -2 };
+            var resultArray = new double[] { -2, -6, 1, 4, -5, 2 };
             var first = new CustomPolynom(firstArray);
             var second = new CustomPolynom(secondArray);
             var result = new CustomPolynom(resultArray);
@@ -100,8 +100,8 @@ namespace PolynomTest
         public void Polynom_MultiplicationOnNumberFirst()
         {
             int number = 3;
-            var firstArray = new double?[] { 1, 0, 2, 4, 5 };
-            var resultArray = new double?[] { 3, 0, 6, 12, 15 };
+            var firstArray = new double[] { 1, 0, 2, 4, 5 };
+            var resultArray = new double[] { 3, 0, 6, 12, 15 };
             var first = new CustomPolynom(firstArray);
             var result = new CustomPolynom(resultArray);
 
@@ -114,8 +114,8 @@ namespace PolynomTest
         public void Polynom_MultiplicationOnNumberSecond()
         {
             int number = 3;
-            var firstArray = new double?[] { 1, 0, 2, 4, 5 };
-            var resultArray = new double?[] { 3, 0, 6, 12, 15 };
+            var firstArray = new double[] { 1, 0, 2, 4, 5 };
+            var resultArray = new double[] { 3, 0, 6, 12, 15 };
             var first = new CustomPolynom(firstArray);
             var result = new CustomPolynom(resultArray);
 

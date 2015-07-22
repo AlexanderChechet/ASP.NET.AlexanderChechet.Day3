@@ -40,11 +40,21 @@ namespace Polynom
                 throw new ArgumentNullException();
             if (ReferenceEquals(null, right))
                 throw new ArgumentNullException();
+            int min = Math.Min(left.MaxPower, right.MaxPower);
             int max = Math.Max(left.MaxPower, right.MaxPower);
             var array = new double[max];
-            for (int i = 0; i < max; i++)
+            for (int i = 0; i < min; i++)
             {
                 array[i] = left[i] + right[i];
+            }
+            if (max != min)
+            {
+                if (left.MaxPower > right.MaxPower)
+                    for (int i = min; i < max; i++)
+                        array[i] = left[i];
+                else
+                    for (int i = min; i < max; i++)
+                        array[i] = right[i];
             }
             return new CustomPolynom(array);
         }
@@ -55,11 +65,21 @@ namespace Polynom
                 throw new ArgumentNullException();
             if (ReferenceEquals(null, right))
                 throw new ArgumentNullException();
+            int min = Math.Min(left.MaxPower, right.MaxPower);
             int max = Math.Max(left.MaxPower, right.MaxPower);
             var array = new double[max];
-            for (int i = 0; i < max; i++)
+            for (int i = 0; i < min; i++)
             {
                 array[i] = left[i] - right[i];
+            }
+            if (max != min)
+            {
+                if (left.MaxPower > right.MaxPower)
+                    for (int i = min; i < max; i++)
+                        array[i] = left[i];
+                else
+                    for (int i = min; i < max; i++)
+                        array[i] = -right[i];
             }
             return new CustomPolynom(array);
         }
